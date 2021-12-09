@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	 version="3.1">
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    
+    <servlet>
+        <servlet-name>Jersey Web Application</servlet-name>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>jersey.config.server.provider.packages</param-name>
+            <param-value>com.pharmacy</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Jersey Web Application</servlet-name>
+        <url-pattern>/webapi/*</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>sign-up</servlet-name>
+        <jsp-file>/sign-up.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>sign-up</servlet-name>
+        <url-pattern>/sign-up</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>signup-check</servlet-name>
+        <jsp-file>/signup-check.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>signup-check</servlet-name>
+        <url-pattern>/signup-check</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>sign-in-check</servlet-name>
+        <jsp-file>/sign-in-check.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>sign-in-check</servlet-name>
+        <url-pattern>/signin-check</url-pattern>
+    </servlet-mapping>
+    
+    
+    <!-- =================Admin Panel================-->
+    <servlet>
+        <servlet-name>dashboard</servlet-name>
+        <jsp-file>/jsps/admin-panel/Dashboard.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dashboard</servlet-name>
+        <url-pattern>/dashboard</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>approve-admin</servlet-name>
+        <jsp-file>/jsps/admin-panel/approve-admin.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>approve-admin</servlet-name>
+        <url-pattern>/approve-admin</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>change-pass</servlet-name>
+        <jsp-file>/jsps/admin-panel/change-password-check.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>change-pass</servlet-name>
+        <url-pattern>/change-pass</url-pattern>
+    </servlet-mapping>
+
+    
+    <servlet>
+        <servlet-name>logout</servlet-name>
+        <jsp-file>/jsps/admin-panel/logout.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    
+<!--    <servlet>
+        <servlet-name>all-admin</servlet-name>
+        <jsp-file>/jsps/admin-panel/employee.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>all-admin</servlet-name>
+        <url-pattern>/admins</url-pattern>
+    </servlet-mapping>-->
+    
+    <servlet>
+        <servlet-name>add-product</servlet-name>
+        <jsp-file>/jsps/product/add-product.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>add-product</servlet-name>
+        <url-pattern>/add-product</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>pro-reg-check</servlet-name>
+        <jsp-file>/jsps/product/pro-reg-check.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>pro-reg-check</servlet-name>
+        <url-pattern>/item-checkout</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>sell</servlet-name>
+        <jsp-file>/jsps/sell/sell.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>sell</servlet-name>
+        <url-pattern>/sell</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>bill</servlet-name>
+        <jsp-file>/jsps/sell/bill.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>bill</servlet-name>
+        <url-pattern>/bill</url-pattern>
+    </servlet-mapping>
+     
+    <servlet>
+        <servlet-name>view-sell</servlet-name>
+        <jsp-file>/jsps/sell/view-sell.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>view-sell</servlet-name>
+        <url-pattern>/view-sell</url-pattern>
+    </servlet-mapping>
+     
+     
+     <servlet>
+        <servlet-name>daily-sell-view</servlet-name>
+        <jsp-file>/jsps/sell/daily-sell-view.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>daily-sell-view</servlet-name>
+        <url-pattern>/sell-view/*</url-pattern>
+    </servlet-mapping>
+     
+     <servlet>
+        <servlet-name>seller-day-sell-view</servlet-name>
+        <jsp-file>/jsps/sell/seller-day-sell-view.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>seller-day-sell-view</servlet-name>
+        <url-pattern>/seller-sell-view/*</url-pattern>
+    </servlet-mapping>
+     
+     
+     
+     
+     
+     <!-- ========== Error Page Handeling===============--> 
+     
+    <error-page>
+        <error-code>404</error-code>
+        <location>/page-not-found.jsp</location>
+    </error-page>
+</web-app>
